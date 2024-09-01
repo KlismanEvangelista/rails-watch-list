@@ -1,15 +1,21 @@
 <div class="container">
-    <h1>Lists#show</h1>
-    <br>
-  <div class="d-flex justify-content-between align-items-center">
-    <h1><%= @list.name %></h1>
-    <%= link_to 'Editar nombre lista', edit_list_path(@list), class: "btn btn-success" %>
-  </div>
   <br>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>'); background-size: cover;">
+    <div class="container">
+      <h1>Bienvenidos a la lista de películas de <strong><%= @list.name %></strong></h1>
+      <p>A short description.</p>
+      <%= link_to 'Editar nombre lista', edit_list_path(@list), class: "btn btn-success" %>
+    </div>
+  </div>
+
+  <br>
+
   <div class = "d-flex justify-content-finish align-items-center">
     <%= link_to 'Add Movie', new_list_bookmark_path(@list), class: "btn btn-success" %>
   </div>
   <br>
+
   <div class="d-flex justify-content-around align-items-center">
     <% @list.movies.each do |movie| %>
       <div class="card-trip">
@@ -24,5 +30,6 @@
       </div>
     <% end %>
   </div>
+
 </div>
 <br>
