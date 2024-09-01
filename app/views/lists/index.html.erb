@@ -9,6 +9,10 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
       url('<%= image_url %>'); background-size: cover;">
       <%= link_to list.name, list_path(list) %>
+      <%= button_to "Delete",
+        list_path(list),
+        method: :delete, confirm: "Are you sure?"
+      %>
       </div>
     <% end %>
   </div>
